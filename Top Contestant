@@ -1,0 +1,35 @@
+
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.*;
+ 
+ 
+public class TestClass {
+    public static void main(String[] args)  {
+   Scanner kb = new Scanner(System.in);
+   HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
+   int n = kb.nextInt();
+   int k = kb.nextInt();    
+   for(int i=1;i<=n;i++){
+       int val = kb.nextInt();
+       map.put(val,i);
+   }
+ 
+     Map<Integer, Integer> sortedMap = new TreeMap<Integer, Integer>(map);
+      Map<Integer, Integer> reverseSortedMap = new TreeMap<Integer, Integer>(Collections.reverseOrder());
+        reverseSortedMap.putAll(sortedMap);
+   for (Map.Entry<Integer, Integer> e : reverseSortedMap.entrySet()) {
+            if(k==0){
+                break;
+            }
+            System.out.print(e.getValue()+" "); 
+            k--;
+   }
+   }
+}
+Language: Java 8
